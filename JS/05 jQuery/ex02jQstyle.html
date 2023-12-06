@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery style</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+</head>
+<body>
+    <h1>jQuery style</h1>
+    <button>change🍭</button>
+
+    <script>
+        // 버튼 클릭시 h1요소의 스타일 변경
+        $('button').click(()=>{
+            console.log('change');
+            // 스타일 제어
+            // JS -> style
+            // jQuery -> css(property, value)
+
+            // 1. 한 줄씩 입력
+            // $('h1').css('color','salmon');
+            // $('h1').css('background-color','lightblue');
+            
+            // 2. chain 방식 입력
+            // jQuery의 메소드는 메소드가 제어하는 대상을 리턴
+            // -> 메소드를 계속해서 붙여넣는 chain 방식 사용 가능
+            // $('h1').css('color','salmon')
+            // .css('background-color','lightblue');
+
+            // 3. 객체 형태 입력
+            $('h1').css({
+                'color': 'salmon',
+                'background-color':'lightblue'
+            })
+
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>img Practice</title>
+</head>
+<body>
+    <img src="https://i.ytimg.com/vi/lQzh4iqReco/maxresdefault.jpg" 
+    width ="500px" alt="" id="imgId" class="imgClass">
+    <br>
+    <button onclick="imgChange()">img change💝</button>
+    <script>
+        // imgElement.src =value;
+     
+        // 1. 이미지 요소 가져오기
+        let imgElement = document.getElementById('imgId');
+        // getElementByClassName
+        imgElement = document.getElementsByClassName('imgClass')[0];
+        // querySelector 태그 선택자
+        imgElement = document.querySelector('img');
+        // querySelector 아이디 선택자
+        imgElement = document.querySelector('#imgId');
+        // querySelectorAll 클래스선택자
+        imgElement = document.querySelectorAll('.imgClass')[0];
+        console.log(imgElement);
+        // 2. 이미지 요소의 src 속성 변경하기
+        let imgSrc1 = 'https://i.ytimg.com/vi/lQzh4iqReco/maxresdefault.jpg';
+        let imgSrc2 = 'https://i.ytimg.com/vi/m6DedDurph8/maxresdefault.jpg';
+
+        const imgChange = (
+            )=> {
+            if(imgElement.src ==imgSrc1){
+                // 2-1. 1번이라면 2번으로
+                imgElement.src=imgSrc2
+            }else{
+                // 2-2. 2번이라면 1번으로
+                imgElement.src=imgSrc1
+            }
+        }
+        
+
+        // let cnt = 0;
+
+        // const imgChage=()=> {
+        //     cnt++;
+        //     if(cnt%2 == 0){
+        //         imgElement.src=imgSrc1
+        //     }else{
+        //         imgElement.src=img2Src2
+        //     }
+
+        // }
+
+    </script>
+</body>
+</html>

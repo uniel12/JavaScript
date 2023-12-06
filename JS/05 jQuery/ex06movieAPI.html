@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie API</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+</head>
+<body>
+    <button>순위 보기💯</button>
+    <!-- 영화진흥위원회 API를 가져와서
+    일일 박스오피스 영화 TOP 10의
+    순위, 영화 이름, 개봉일 출력
+    rank, movieNm,openDt -->
+    
+    <script>
+        // ajax -> 비동기 통신 방법
+
+        // jQuery에 접근 -> $.
+        // ajax 메소드 사용 -> ajax()
+        let url = 'http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt=20230101';
+        $(document).on('click','button',()=>{
+            $.ajax({
+                // url -> 어디랑 통신할 지
+                url:url,
+                // type -> 어떤 방식으로 통신할 지(get/post)
+                //(지금은 live server라 생략)
+                // success -> 통신 성공 시
+                success : (res)=>{
+                    // console.log(res.boxOfficeResult.dailyBoxOfficeList);
+                    let movieList = res.boxOfficeResult.dailyBoxOfficeList;
+                //   for( let i=0; i<10; i++){
+                //     console.log(
+                //         movieList[i].rank,
+                //         movieList[i].movieNm,
+                //         movieList[i].openDt,
+                //         );
+                //   }
+                //   movieList.forEach((element)=>{
+                //       console.log(element.rank,element.movieNm, element.openDt);
+                //     })
+                // for(element of movieList){
+                //     console.log(element.rank,element.movieNm, element.openDt);
+                // }
+                },
+                    // error -> 통신 실패 시
+                error : ()=>{
+                    console.log('error');
+                }
+                
+                
+
+
+            })
+        })
+    </script>
+</body>
+</html>

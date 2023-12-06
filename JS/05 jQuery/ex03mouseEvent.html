@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Event</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+</head>
+<body>
+    <h1>Mouse Event⚡</h1>
+    <h1>Mouse Event⚡</h1>
+    <h1>Mouse Event⚡</h1>
+    <button>change🍭</button>
+
+    <script>
+        /*
+        $(선택자).on(이벤트타입, 이벤트 헨들러);
+        $(document).on(이벤트타입, 이벤트타겟, 이벤트헨들러);
+        */
+
+        /*
+        this : 호출된 HTML 객체를 저장
+        ** 화살표 함수 안X 대체 : (e)=>{e.taarget}
+        */
+        // 1. 버튼 클릭 시 , h1 요소 파란색 -> click
+        $(document).on('click' , 'button',()=>{
+            // console.log('test');
+            $('h1').css('color','blue');
+        })
+        // 2. h1 요소 마우스 오버 시, h1 요소 빨간색 -> mouseover
+        $(document).on('mouseover' , 'h1',function(){
+            // console.log('test2');
+            // h1 전체 이벤트 동작
+            $('h1').css('color','red');
+            // 마우스 올라가는 h1만 이벤트 동작
+            // $(this).css('color','red');
+        })
+        
+        // 3. h1 요소 마우스 아웃 시, h1 요소 검은색 -> mouseout
+        $(document).on('mouseout' , 'h1',(e)=>{
+            // console.log('test3');
+            $(e.target).css('color','black');
+        })
+    </script>
+</body>
+</html>

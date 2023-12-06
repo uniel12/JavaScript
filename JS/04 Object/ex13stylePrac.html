@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style Practice</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+        }
+        #redBox{
+            background-color: red;
+        }
+        #blueBox{
+            background-color: blue;
+        }
+        #greenBox{
+            background-color: green;
+        }
+        #grayBox{
+            background-color: gray;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="redBox"></div>
+    <div id="blueBox"></div>
+    <div id="greenBox"></div>
+    <div id="grayBox"></div>
+    <button onclick="moveFunc()">이동하기!</button>
+    <button onclick="radiusFunc()">둥글게!</button>
+
+    <script>
+        // 1. 스타일을 제어할 대상을 가져오기
+        let redBox = document.querySelector('#redBox');
+        let blueBox =document.querySelector('#blueBox');
+        let greenBox =document.querySelector('#greenBox');
+        let grayBox =document.querySelector('#grayBox');
+        
+
+        // 2. 이동하기 버튼 클릭시 , 이동 
+        // (marginLeft)
+        const moveFunc=()=>{
+            blueBox.style.marginLeft='100px';
+            greenBox.style.marginLeft='200px';
+            grayBox.style.marginLeft='300px';
+        }
+        // 3. 둥글게 버튼 클릭 시 , 둥글게
+        //    (borderTopRightRadius,
+        //     borderBottomLeftRadius)
+        const radiusFunc=()=>{
+            let divList = document.querySelectorAll('div');
+            console.log(divList);
+            // redBox.style.borderTopRightRadius='50%';
+            // redBox.style.borderBottomLeftRadius='50%';
+            // blueBox.style.borderTopRightRadius='50%';
+            // blueBox.style.borderBottomLeftRadius='50%';
+            // greenBox.style.borderTopRightRadius='50%';
+            // greenBox.style.borderBottomLeftRadius='50%';
+            // grayBox.style.borderTopRightRadius='50%';
+            // grayBox.style.borderBottomLeftRadius='50%';
+
+            divList.forEach((element)=> {
+                 element.style.borderTopRightRadius='50%';
+                 element.style.borderBottomLeftRadius='50%';
+            });
+
+        }
+
+    </script>
+</body>
+</html>

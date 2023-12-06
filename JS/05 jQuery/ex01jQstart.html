@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery start</title>
+    <!-- jQuery 라이브러리 연동하기 -->
+    <!-- 1. 다운로드 방식 -->
+    <!-- <script src="./code.jquery.com_jquery-3.7.0.min.js"></script> -->
+    <!-- 2. 네트워크 방식 -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+</head>
+<body>
+    <h1>jQuery start</h1>
+    <button id= "textBtn">TEXT</button>
+    <button id= "htmlBtn">HTML</button>
+    
+    <script>
+        /* 
+        jQuery / $
+        -> wrapper(래퍼) : 인자로 전달된 요소들에
+                          jQuery의 기능성을 부가해서 반환
+        $(선택자)
+        */ 
+        
+        // 1. h1요소 접근
+        let valJs= document.querySelector('h1');
+        console.log(valJs);
+        // let valJQ = jQuery('h1');
+        let valJQ = $('h1');
+        console.log(valJQ);
+        // 2. TEXT button 클릭시 내용만
+        // JS -> innerText
+        // JQ -> text()
+        $('#textBtn').click(()=>{
+            // console.log('text');
+            $('h1').text('내용변경!')
+        });
+        // 3. HTML button 클릭시 내용+태그
+        // JS -> innerHTML
+        // jQuery -> html()
+        // <a href="#">a태그</a>
+        $('#htmlBtn').click(()=>{
+            // console.log('html');
+            $('h1').html('<a href="#">jQuery start!</a>')
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS start</title>
+</head>
+<body>
+    <a href="#">안녕하세요!</a>
+    <br><br>
+    <!-- Change -->
+    <button id="btn1">DarkMode🖤</button>
+    <!-- Revert -->
+    <button id="btn2">WhiteMode🤍</button>
+    <br>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+    <h1>오늘은 7월 31일!</h1>
+    <p>재미있는 JS시간💖</p>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2wYoAjnN0NbL_B8T7fniBXI_g7pJ_Ankv1g&usqp=CAU" alt="">
+
+
+    <script>
+        // 첫 번째 버튼 클릭 시
+        document.getElementById('btn1').addEventListener('click',()=>{
+            // 배경색, 글씨 색 스타일 변경
+            document.querySelector('body').style.backgroundColor='black';
+            document.querySelector('body').style.color='skyblue';
+
+        })
+        // 두 번째 버튼 클릭 시
+        document.getElementById('btn2').addEventListener('click',()=>{
+            // 배경색, 글씨 색 스타일 변경
+            document.querySelector('body').style.backgroundColor='white';
+            document.querySelector('body').style.color='black';
+
+        })
+    </script>
+</body>
+</html>

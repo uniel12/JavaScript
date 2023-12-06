@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>script type</title>
+    <!-- 외부방식 : 외부의 js파일 안에 작성 후 연결 
+    defer -> HTML 로딩이 다 되고 나서 script 실행-->
+    <script defer src="./ex18scriptType.js"></script>
+</head>
+<body>
+    <!-- 인라인 방식 : 태그 내 직접 기능을 넣어줄 때 작성 -->
+    <button onclick="console.log('Click!')">Mouse🐭</button>
+
+    <!-- 내부방식 : head 혹은 body 영역의 
+        script 태그 안에 직접 작성 -->
+        <script>
+            console.log('Hello World!');
+            </script>
+    
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Collection</title>
+</head>
+<body>
+    <h3>우리반 점심🍗</h3>
+    <ul>
+        <li>한식</li>
+        <li>안먹어...</li>
+        <li>협의중...</li>
+    </ul>
+    <p class="pTag">배고파요..</p>
+
+    <script>
+        // HTML Collection -> 유사배열
+        // getElementsByTagName, getElementsByClassName 등
+        // 배열의 형태, 인덱스 o, 길이 O, 배열함수 X
+        // h3 요소 id로 가져오기
+        let h3Element = document.getElementById('h3Tag')
+        console.log(h3Element);
+
+        // li요소 태그이름으로 가져오기
+        let liList  = document.getElementsByTagName('li')
+        console.log(liList);
+
+        // 한식 글자만 가져오기
+        console.log(liList[0].innerText);
+
+        // for-of문
+        for (let li of liList) {
+            console.log(li.innerText);
+        }
+        // forEach문
+        // liList.for(li)=>{
+        //     console.log(li.innerText);.
+        // }
+
+        // getElementsByClassName로 p 요소 가져오기
+        // 클래스로 가져올 때는 하나여도 인덱스로 가져와야함!!!
+        let pElement = document.getElementsByClassName('pTag');
+        console.log(pElement);
+        // p요소에서 글자만
+        console.log(pElement[0].innerText);
+        
+    </script>
+</body>
+</html>

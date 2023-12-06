@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Pracice</title>
+</head>
+<body>
+    <span id="spanTag"></span>
+    <br>
+    <button onclick="plusFunc()">+1 증가</button>
+    <button onclick="minusFunc()">-1 감소</button>
+
+    <script>
+        // 버튼 클릭시 1씩 증감이 되는 페이지 만들기
+        // 단, 0일 경우 감소되지 않도록 하기
+
+        // 1. span 요소 가져오기
+        // 2. +1 버튼 클릭시, 숫자 증가
+        // 3. -1 버튼 클릭시, 숫자 감소
+        // 4. -1 버튼 클릭시, 0이하에서는 감소X
+
+
+
+        let spanValue = document.getElementById('spanTag')
+    
+
+        const plusFunc = ()=> {
+        spanValue.innerText = Number(spanValue.innerText)+1;
+
+        }
+        
+        const minusFunc =()=>{
+            Number(spanValue.innerText) > 0 &&
+            (spanValue.innerText = Number(spanValue.innerText)-1);
+       
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grade Card</title>
+    <style>
+        table,td, th{
+            border : 1px solid black;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        // 0. 과목수, 과목이름, 과목점수,총점, 평균초기화
+        let subNum=0;
+        let subName=[];
+        let subScore =[];
+        let totalScore =0;
+        let avgScore =0;
+
+        let name =Array();
+        let score=Array();
+        
+        // 1. 과목 수 입력
+        subNum= Number(prompt("과목 수 입력"));
+
+        // 2. 과목 수만큼 과목 이름 입력
+        /*
+        prompt로 입력 받아온 데이터를
+        배열에 데이터 추가하는 메소드를 사용해서
+        subName 배열에 추가!!!
+        배열의 길이는 과목 수 
+        */ 
+        for( let i =0; i< subNum; i++ ){
+        subName.push(prompt("점수를 입력할 과목을 입력하세요"));
+        }
+        console.log(subName);
+        // 3. 각 과목들의 점수를 입력
+        // 4. 총점, 평균 점수 도출
+        for( let i =0; i< subNum; i++ ){
+            subScore.push(Number(prompt(`${subName[i]}의 점수를 입력`)));
+            totalScore += subScore[i]
+            
+        }
+        avgScore = parseInt(totalScore/subNum);
+
+        console.log(subScore);
+        console.log(totalScore,avgScore);
+
+
+        // 5. 각 점수, 총합 평균을 HTML문서 내 테이블로 출력
+
+        let printTable = `
+        <table>
+            <tr>
+        `
+        // printTable +=
+        // `
+        //         <td>자바</td>
+        //         <td>안드로이드</td>
+        // `
+        for(let i=0; i<subNum; i++){
+            printTable += `<td>${subName[i]}</td>`;
+        }
+        printTable +=
+        `
+                <td>총합</td>
+                <td>평균</td>
+            </tr>    
+            <tr>
+        `
+        // printTable +=
+        // `
+        //         <td>87</td>
+        //         <td>81</td>
+        // `
+        for(let i=0; i<subNum; i++){
+            printTable += `<td>${subScore[i]}</td>`;
+        }
+        printTable +=
+        `
+                <td>${totalScore}</td>
+                <td>${avgScore}</td>
+            </tr>    
+        </table>
+        `
+        document.write(printTable);
+
+
+        // document.write(`
+        // <table<tr><td></td><td></td></tr></table>`)
+
+        // document.write(`
+        // <table>
+        // <tr align="center">`);
+        // for( let i=0; i<subNum;i++){
+        //     document.write(`
+        //     <th>${subName[i]}</th>`);
+        //     }
+        //     document.write(`
+        //     <th>총합</th>
+        //     <th>평균</th>
+        //     </tr>
+        //     <tr align="center">`)
+        //     for( let i=0; i<subNum;i++){
+        //     document.write(`<td>${subScore[i]}</td>`)
+        //     }
+        //     document.write(`<td>${totalScore}</td>
+        //     <td>${avgScore}</td>
+        // </tr></table>`)
+
+    </script>
+</body>
+</html>
